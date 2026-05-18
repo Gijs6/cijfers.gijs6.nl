@@ -1,0 +1,9 @@
+{
+    "private": true,
+    "scripts": {
+        "build:css": "lightningcss --bundle --minify --browserslist site/main.css -o site/main.min.css"
+    },
+    "devDependencies": {
+        "lightningcss-cli": "^1"
+    }
+}
