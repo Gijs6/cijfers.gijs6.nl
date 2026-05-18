@@ -1,0 +1,163 @@
+:root {
+    --spacing-3xs: 0.125rem;
+    --spacing-2xs: 0.25rem;
+    --spacing-xs: 0.375rem;
+    --spacing-sm: 0.625rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.25rem;
+    --spacing-xl: 2rem;
+    --spacing-2xl: 3rem;
+    --spacing-3xl: 4rem;
+    --spacing-4xl: 6rem;
+    --spacing-5xl: 8rem;
+
+    --radius: 5px;
+
+    --font-family-sans: system-ui, sans-serif;
+    --font-family-mono: ui-monospace, monospace;
+
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-md: 1rem;
+    --font-size-lg: 1.25rem;
+    --font-size-xl: 2rem;
+
+    --font-weight-light: 300;
+    --font-weight-regular: 400;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+
+    --color-bg: var(--color-white);
+    --color-fg: var(--color-black);
+    --color-border: var(--color-gray-2);
+
+    --color-accent-light: var(--color-blue-1);
+    --color-accent: var(--color-blue-5);
+    --color-accent-dark: var(--color-blue-7);
+}
+
+body {
+    font-family: var(--font-family-sans);
+    background: var(--color-bg);
+    color: var(--color-fg);
+
+    main {
+        padding: var(--spacing-xl);
+
+        h1 {
+            margin: 0 0 var(--spacing-xl);
+
+            a {
+                color: var(--color-accent-dark);
+                text-decoration: none;
+            }
+        }
+
+        .layout {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--spacing-xl);
+
+            @media (max-width: 600px) {
+                flex-direction: column;
+            }
+
+            form {
+                display: flex;
+                flex-direction: column;
+                gap: var(--spacing-sm);
+                width: fit-content;
+
+                .field {
+                    display: flex;
+                    flex-direction: column;
+
+                    label {
+                        width: fit-content;
+                        padding: var(--spacing-xs) var(--spacing-sm);
+                        border: 1px solid var(--color-accent);
+                        border-radius: var(--radius) var(--radius) 0 0;
+                        background: var(--color-accent);
+                        color: var(--color-white);
+                        font-weight: var(--font-weight-semibold);
+                    }
+
+                    input {
+                        padding: var(--spacing-xs) var(--spacing-sm);
+                        border: 1px solid var(--color-border);
+                        border-radius: 0 var(--radius) var(--radius) var(--radius);
+                        background: var(--color-bg);
+
+                        &:focus {
+                            outline: none;
+                            border-color: var(--color-accent);
+                        }
+                    }
+                }
+
+                > button {
+                    margin-top: var(--spacing-sm);
+                    padding: var(--spacing-xs) var(--spacing-sm);
+                    border: none;
+                    border-radius: var(--radius);
+                    background: var(--color-accent);
+                    color: var(--color-white);
+                    font-weight: var(--font-weight-semibold);
+                    cursor: pointer;
+
+                    &:hover {
+                        background: var(--color-accent-dark);
+                    }
+                }
+            }
+
+            table {
+                overflow: hidden;
+                border: 1px solid var(--color-border);
+                border-radius: var(--radius);
+                border-collapse: separate;
+                border-spacing: 0;
+
+                caption {
+                    text-align: left;
+                    font-size: var(--font-size-sm);
+                    color: var(--color-gray-6);
+                    padding-bottom: var(--spacing-xs);
+                }
+
+                thead {
+                    background: var(--color-accent);
+                    color: var(--color-white);
+
+                    th:not(:last-child) {
+                        border-right: 1px solid rgba(255, 255, 255, 0.2);
+                    }
+                }
+
+                th,
+                td {
+                    padding: var(--spacing-xs) var(--spacing-md);
+                    text-align: left;
+
+                    &:first-child {
+                        text-align: right;
+                    }
+                }
+
+                tbody {
+                    tr:not(:last-child) td {
+                        border-bottom: 1px solid var(--color-border);
+                    }
+
+                    td:not(:last-child) {
+                        border-right: 1px solid var(--color-border);
+                    }
+
+                    tr:nth-child(even) {
+                        background: var(--color-gray-0);
+                    }
+                }
+            }
+        }
+    }
+}
