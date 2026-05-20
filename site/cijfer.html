@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="nl">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <title>Cijfer berekenen – Cijferberekenaar</title>
+        <meta name="description" content="Bereken je cijfer op basis van behaalde punten" />
+
+        <link rel="stylesheet" href="/main.min.css" />
+    </head>
+    <body>
+        <main>
+            <h1><a href="/">Cijferberekenaar</a></h1>
+
+            <nav>
+                <a href="/">N-term tabel</a>
+                <a href="/cijfer" aria-current="page">Cijfer berekenen</a>
+            </nav>
+
+            <div class="layout">
+                <form id="form">
+                    <div class="field">
+                        <label for="score">Behaalde punten</label>
+                        <input type="number" id="score" name="score" min="0" placeholder="bijv. 32" required />
+                    </div>
+                    <div class="field">
+                        <label for="max">Max. aantal punten</label>
+                        <input type="number" id="max" name="max" min="1" placeholder="bijv. 50" required />
+                    </div>
+                    <button type="submit">Bereken</button>
+                </form>
+
+                <section id="result" aria-live="polite"></section>
+            </div>
+        </main>
+
+        <script src="cijfer.js"></script>
+    </body>
+</html>
