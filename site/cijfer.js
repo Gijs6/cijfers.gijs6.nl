@@ -21,7 +21,7 @@ function fmtNterm(n) {
 
 function buildResult(score, maxScore) {
     const gradeN0 = Math.round(calcGrade(score, maxScore, 0) * 10) / 10;
-    const gradeN2 = Math.round(calcGrade(score, maxScore, 2) * 10) / 10;
+    const gradeN2 = Math.round(calcGrade(score, maxScore, 2.5) * 10) / 10;
 
     const container = document.createElement("div");
     container.className = "grade-result";
@@ -38,7 +38,7 @@ function buildResult(score, maxScore) {
 
     const list = document.createElement("dl");
     list.className = "grade-list";
-    for (let n = 0; n <= 2 + 1e-9; n = Math.round((n + 0.1) * 10) / 10) {
+    for (let n = 0; n <= 2.5 + 1e-9; n = Math.round((n + 0.1) * 10) / 10) {
         const grade = Math.round(calcGrade(score, maxScore, n) * 10) / 10;
         const dt = document.createElement("dt");
         dt.textContent = fmtNterm(n);
