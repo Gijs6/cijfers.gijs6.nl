@@ -1,0 +1,16 @@
+#!/bin/bash
+SRC="site/**"
+
+build() {
+  i:build_css
+}
+
+serve() {
+  i:serve_static site 8005
+}
+
+deploy() {
+  build
+  format
+  g:deploy
+}
