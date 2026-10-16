@@ -33,7 +33,7 @@ function buildResult(score, maxScore) {
 
     const range = document.createElement("p");
     range.className = "grade-range";
-    range.textContent = `${fmtGrade(gradeN0)} – ${fmtGrade(gradeN2)}`;
+    range.textContent = `${fmtGrade(gradeN0)} - ${fmtGrade(gradeN2)}`;
     container.appendChild(range);
 
     const list = document.createElement("dl");
